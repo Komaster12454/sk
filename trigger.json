@@ -1,7 +1,7 @@
 {
-  "ip": "162.159.137.232",
-  "method": "http_mutator",
-  "threads": 100,
+  "ip": "snake-ai-one.vercel.app",
+  "method": "malformed_http_headers",
+  "threads": 200,
   "duration": 3600,
   "timestamp": "2025-05-02T22:14:02.869995"
 }
