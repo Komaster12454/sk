@@ -1,5 +1,5 @@
 {
-  "ip": "fortnite.com",
+  "ip": "162.159.137.232",
   "method": "http_mutator",
   "threads": 100,
   "duration": 3600,
