@@ -1,6 +1,6 @@
 {
   "ip": "104.29.159.106",
-  "method": "tcp_chained_syn",
+  "method": "five_udp_flood",
   "threads": 200,
   "duration": 3600,
   "timestamp": "2025-05-02T22:14:02.869995"
